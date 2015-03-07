@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <LocalAuthentication/LocalAuthentication.h>
+#import "FlatUIKit.h"
 
-@interface AttendeeViewController : UIViewController <CLLocationManagerDelegate>
+@interface AttendeeViewController : UIViewController <CLLocationManagerDelegate, FUIAlertViewDelegate>
+
 
 @property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;
 @property (strong, nonatomic) CLLocationManager *locationManager;

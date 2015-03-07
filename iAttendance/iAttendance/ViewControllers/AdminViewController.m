@@ -7,10 +7,14 @@
 //
 
 #import "AdminViewController.h"
+#import <Parse/Parse.h>
 
 @interface AdminViewController ()
-
+@property NSUUID *uuid;
 @end
+
+NSDate *startingTime;
+NSDate *minutesSinceStart;
 
 @implementation AdminViewController
 - (void)viewDidLoad {
@@ -30,6 +34,8 @@
         
         // Create a NSUUID object
         NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"A77A1B68-49A7-4DBF-914C-760D07FBB87B"];
+        
+        self.uuid = uuid;
         
         // Initialize the Beacon Region
         self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
@@ -81,6 +87,7 @@
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
 
+    [self startAttendanceTimer];
 
 }
 
@@ -89,6 +96,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)startAttendanceTimer
+{
+    // calls the updateLabel method every 0.1 seconds
+    self.attendanceRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateViewForUserInformation) userInfo:nil repeats:YES];
+    startingTime = [NSDate date]; //store in object
+}
 /*
 #pragma mark - Navigation
 
@@ -98,6 +112,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) updateViewForUserInformation
+{
+    PFQuery *eventQuery = [PFQuery queryWithClassName:@"Event"];
+    [eventQuery whereKey:@"eventId" equalTo:self.uuid.UUIDString];
+    
+    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu events.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                self.attendanceCountLabel.text = [object objectForKey:@"attendance"];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    //self.userProfileImageView.image = [UIImage imageNamed:@"wood.jpg"];
+}
 
 - (IBAction)backButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

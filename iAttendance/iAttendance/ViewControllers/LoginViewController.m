@@ -80,18 +80,33 @@ UITextField *activeField;
     [self checkBluetooth];
     
     // Possibly Used to access the specific value in the plist for using TouchID
-//    NSString *path = [[NSBundle mainBundle] pathForResource: @"Root" ofType: @"plist"];
-//    NSMutableDictionary *dictplist =[[NSMutableDictionary alloc] initWithContentsOfFile:path];
-    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    //    testObject[@"foo"] = @"bar";
-    //    [testObject saveInBackground];
+//    NSString *pathStr = [[NSBundle mainBundle] bundlePath];
+//    NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+//    NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+//    NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
+//    NSArray *prefSpecifierArray = [settingsDict objectForKey:@"enabled_touchid"];
+//    
+//    NSString *kFirstNameKey = @"enabled_touchid";
+//    //NSString *kSecondNameKey = @"Web DataSource";
+//    
+//    NSDictionary *prefItem;
+//    NSObject *nsUserDefTouch;
+//    for (prefItem in prefSpecifierArray){
+//        NSString *keyValueStr = [prefItem objectForKey:@"Key"];
+//        if ([keyValueStr isEqualToString:kFirstNameKey]){
+//            nsUserDefTouch = [prefItem objectForKey:@"DefaultValue"];
+//        }
+//    }
+//    NSLog(@" this is the url == %@", nsUserDefTouch);
+    //if([object != nil){
+//        //object is there
+//        NSLog(object);
+//    }
     
     // TouchID Login SetUp Condition
-    //    if (<#condition#>) {
-    //        <#statements#>
-    //        [self login];
-    //    }
-    
+//    if ([[dictplist objectForKey:@""] isEqualToString:@"YES"]) {
+//        [self login];
+//    }
     //[self login];
 }
 

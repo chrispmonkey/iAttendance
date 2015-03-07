@@ -7,6 +7,8 @@
 //
 
 #import "AttendeeViewController.h"
+#import <Parse/Parse.h>
+
 @import CoreLocation;
 
 @interface AttendeeViewController () <CLLocationManagerDelegate>
@@ -177,12 +179,70 @@
     if ([foundBeacon.proximityUUID.UUIDString isEqualToString:self.uuid.UUIDString]) {
         self.statusLabel.text = [NSString stringWithFormat:@"Beacon found! %@", foundBeacon.proximityUUID];
         NSLog(@"Beacon found! %@", foundBeacon.proximityUUID);
+        
+        [self checkInUsingTouchID];
     }
     //NSLog(@"Beacon found! %@", foundBeacon.proximityUUID);
     // You can retrieve the beacon data from its properties
     //NSString *uuid = foundBeacon.proximityUUID.UUIDString;
     //NSString *major = [NSString stringWithFormat:@"%@", foundBeacon.major];
     //NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
+}
+
+// Login using TouchID
+- (void)checkInUsingTouchID
+{
+    LAContext *myContext = [[LAContext alloc] init];
+    NSError *authError = nil;
+    NSString *myReasonString = @"Login to Spotter using TouchID";
+    
+    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
+        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                  localizedReason:myReasonString
+                            reply:^(BOOL success, NSError *error) {
+                                if (success) {
+                                    // User authenticated successfully, use last logged in user
+                                    // TODO: Add settings to enable or disable this
+                                    
+                                    NSLog(@"Login Successful");
+                                    // Ask user for the object ID (AKA Event Code)
+                                    PFQuery *eventRowQuery = [PFQuery queryWithClassName:@"Event"];
+                                    [eventRowQuery whereKey:@"uuid" equalTo:self.uuid.UUIDString];
+                                    NSArray* events = [eventRowQuery findObjects];
+                                    
+                                    NSString *objectId = events[0];
+                                    
+                                    NSString *eventCode = objectId;
+                                    // Create a pointer to an object of class Point with id dlkj83d
+                                    PFObject *eventCheckin = [PFObject objectWithoutDataWithClassName:@"Event" objectId:eventCode];
+                                    
+                                    // Increment the current value of the attendance key by 1
+                                    [eventCheckin incrementKey:@"attendance"];
+                                    
+                                    // Save
+                                    [eventCheckin save];
+                                    
+                                    [self dismissViewControllerAnimated:YES completion:nil];
+                                    //[self dismissViewControllerAnimated:YES completion:nil];
+                                } else {
+                                    // Authenticate failed
+                                    NSLog(@"Login Failed");
+                                    
+                                }
+                            }];
+    } else {
+        // Could not evaluate policy; check authError
+    }
+}
+
+- (void)alertView:(FUIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+}
+
+- (void)alertView:(FUIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
 }
 
 - (IBAction)backButtonPressed:(id)sender {

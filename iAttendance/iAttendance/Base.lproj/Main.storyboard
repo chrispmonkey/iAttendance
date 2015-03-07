@@ -911,12 +911,6 @@ Last Edited on 2014-10-13</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the mode you would like to use for this device:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-yE-GJj">
-                                <rect key="frame" x="96" y="72" width="410" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-sZ-lb6">
                                 <rect key="frame" x="278" y="132" width="44" height="30"/>
                                 <state key="normal" title="Admin">
@@ -940,11 +934,7 @@ Last Edited on 2014-10-13</string>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" id="0nG-R6-gDn"/>
                             <constraint firstAttribute="centerX" secondItem="chg-Pe-8WF" secondAttribute="centerX" id="1ET-sc-kFz"/>
-                            <constraint firstItem="KUg-yE-GJj" firstAttribute="top" secondItem="vEi-Rg-7wz" secondAttribute="bottom" constant="8" symbolic="YES" id="4R0-h8-8b9"/>
                             <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="chg-Pe-8WF" secondAttribute="bottom" constant="400" id="O82-Qw-HdQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KUg-yE-GJj" secondAttribute="trailing" constant="78" id="d6B-kh-SGi"/>
-                            <constraint firstItem="KUg-yE-GJj" firstAttribute="leading" secondItem="Nqi-tZ-B2r" secondAttribute="leadingMargin" constant="80" id="fUe-KC-7Cu"/>
-                            <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="KUg-yE-GJj" secondAttribute="bottom" constant="476" id="m5M-XE-SdB"/>
                             <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" symbolic="YES" id="neP-Lx-rg6"/>
                         </constraints>
                     </view>
@@ -956,6 +946,10 @@ Last Edited on 2014-10-13</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="adminButton" destination="FwZ-sZ-lb6" id="xsp-Ta-rMw"/>
+                        <outlet property="attendeeButton" destination="chg-Pe-8WF" id="6VY-Je-cF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaW-N0-qMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1084,6 +1078,7 @@ Last Edited on 2014-10-13</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attendanceCountLabel" destination="pXn-4j-Hw1" id="veh-yH-fSl"/>
                         <outlet property="broadcastButton" destination="fIQ-m4-KRC" id="P4k-Kz-Ko3"/>
                         <outlet property="statusLabel" destination="0N8-Oy-4zs" id="Hyd-wN-Nmg"/>
                         <outlet property="stopButton" destination="Hbp-cq-bgB" id="GXo-cc-cQn"/>

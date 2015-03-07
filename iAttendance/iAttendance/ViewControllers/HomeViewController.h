@@ -13,6 +13,9 @@
 
 - (IBAction)menuButtonPressed:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *adminButton;
+@property (weak, nonatomic) IBOutlet UIButton *attendeeButton;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end

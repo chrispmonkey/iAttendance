@@ -17,9 +17,11 @@
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet FUIButton *broadcastButton;
-
+@property (weak, nonatomic) NSTimer *attendanceRefreshTimer;
 @property (weak, nonatomic) IBOutlet FUIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *attendanceCountLabel;
+
 - (IBAction)backButtonPressed:(id)sender;
 - (IBAction)broadcastButtonPressed:(id)sender;
 - (IBAction)stopButtonPressed:(id)sender;
