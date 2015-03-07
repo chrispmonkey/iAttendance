@@ -30,6 +30,10 @@
     
     self.transitions.dynamicTransition.slidingViewController = self.slidingViewController;
     CLLocationManager *locationManager;
+    
+  
+    
+    
     locationManager = [[CLLocationManager alloc] init];
     
     [locationManager requestWhenInUseAuthorization];
