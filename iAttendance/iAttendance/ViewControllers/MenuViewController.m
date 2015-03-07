@@ -30,9 +30,7 @@
     self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
     
     // Populate user information
-    if ([PFUser currentUser]) {
-        [self updateViewForUserInformation];
-    }
+    
     
     // Round Profile Image
     // Get the Layer of any view
@@ -45,6 +43,12 @@
         [self.menuTableView selectRowAtIndexPath:defaultIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     });
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    if ([PFUser currentUser]) {
+        [self updateViewForUserInformation];
+    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
