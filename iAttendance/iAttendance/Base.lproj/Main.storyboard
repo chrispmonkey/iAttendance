@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQ2-2y-H0K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQ2-2y-H0K">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -1366,47 +1366,6 @@ Last Edited on 2014-10-13</string>
             </objects>
             <point key="canvasLocation" x="2390" y="400"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="nyW-9c-Ci6">
-            <objects>
-                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mxu-ar-KxX" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iel-bo-rsa"/>
-                        <viewControllerLayoutGuide type="bottom" id="Kal-1K-5ID"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8DB-Vb-a2a">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-pf-l9l">
-                                <rect key="frame" x="272" y="285" width="56" height="30"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="Mxu-ar-KxX" eventType="touchUpInside" id="CZ1-ap-aRM"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MY8-pf-l9l" firstAttribute="centerY" secondItem="8DB-Vb-a2a" secondAttribute="centerY" id="GLC-6e-2bk"/>
-                            <constraint firstItem="MY8-pf-l9l" firstAttribute="centerX" secondItem="8DB-Vb-a2a" secondAttribute="centerX" id="wuU-vQ-V8m"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="j8f-yc-I3L">
-                        <barButtonItem key="leftBarButtonItem" image="menu_black.png" id="kQf-pr-GOX">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="Mxu-ar-KxX" id="Oyg-au-OvE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YGk-nd-Lcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2390" y="1116"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="wOe-S5-K8P">
             <objects>
@@ -1416,12 +1375,49 @@ Last Edited on 2014-10-13</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Mxu-ar-KxX" kind="relationship" relationship="rootViewController" id="ngL-68-A0L"/>
+                        <segue destination="Nmp-CP-UXc" kind="relationship" relationship="rootViewController" id="OTI-cR-GU9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wb-m7-m8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1654" y="1116"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Asw-dC-cF0">
+            <objects>
+                <tableViewController id="Nmp-CP-UXc" customClass="CustomIASKControllerViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HzZ-Xz-AbR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ur6-uf-lbZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ur6-uf-lbZ" id="v0r-VF-noN">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nmp-CP-UXc" id="THH-dN-hMS"/>
+                            <outlet property="delegate" destination="Nmp-CP-UXc" id="5Yp-zJ-ohG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Ywh-aa-VB8">
+                        <barButtonItem key="leftBarButtonItem" image="menu_black.png" id="tro-t4-BaV">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="Nmp-CP-UXc" id="VcP-65-4pf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="settingsTableView" destination="HzZ-Xz-AbR" id="aqi-6E-nPj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7m5-Qd-UaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="1832"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EW2-AT-glH">
