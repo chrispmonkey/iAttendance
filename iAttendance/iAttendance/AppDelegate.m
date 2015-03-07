@@ -9,12 +9,26 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
+#define kMyStoreNumber 1
+#define kWeeklySpecialItemNumber 1
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate*)appDelegate {
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
+}
+
+- (NSUUID*)myUUID {
+    if (!_myUUID) {
+        // generate unique identifier
+        _myUUID = [[NSUUID alloc] initWithUUIDString:@"10D39AE7-020E-4467-9CB2-DD36366F899D"];
+    }
+    return _myUUID;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

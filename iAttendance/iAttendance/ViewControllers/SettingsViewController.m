@@ -88,4 +88,15 @@
 - (IBAction)menuButtonPressed:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
+
+- (IBAction)logOutButtonPressed:(id)sender {
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+    
+    // FOR TESTING PURPOSES
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    
+    [self presentViewController:loginViewController animated:YES completion:nil];
+}
 @end

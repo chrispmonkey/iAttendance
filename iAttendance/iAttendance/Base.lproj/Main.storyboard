@@ -530,6 +530,15 @@ Last Edited on 2014-10-13</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pl4-dX-0cg">
+                                <rect key="frame" x="124" y="128" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="yeX-2b-kr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -539,10 +548,12 @@ Last Edited on 2014-10-13</string>
                             <constraint firstItem="12E-WH-SKv" firstAttribute="leading" secondItem="bjm-vc-CwK" secondAttribute="leading" id="Gyt-We-Fll"/>
                             <constraint firstItem="xPL-eY-MnD" firstAttribute="top" secondItem="12E-WH-SKv" secondAttribute="bottom" id="L6c-Te-PZx"/>
                             <constraint firstItem="rcQ-mh-QgB" firstAttribute="top" secondItem="1bI-1g-rAr" secondAttribute="bottom" constant="8" id="LGT-Cb-ce0"/>
+                            <constraint firstItem="pl4-dX-0cg" firstAttribute="top" secondItem="rcQ-mh-QgB" secondAttribute="bottom" constant="8" symbolic="YES" id="LeS-Ev-zVD"/>
                             <constraint firstItem="12E-WH-SKv" firstAttribute="top" secondItem="fqu-IM-5fi" secondAttribute="bottom" constant="8" id="M7P-ev-Ika"/>
                             <constraint firstItem="12E-WH-SKv" firstAttribute="top" secondItem="rcQ-mh-QgB" secondAttribute="bottom" constant="58" id="Q6j-Qy-xhs"/>
                             <constraint firstItem="MKe-Ev-Q4i" firstAttribute="trailing" secondItem="12E-WH-SKv" secondAttribute="trailing" id="QYj-Xc-FCj"/>
                             <constraint firstItem="Eye-UK-di9" firstAttribute="top" secondItem="uMx-CV-g3z" secondAttribute="bottom" id="REQ-KG-JtJ"/>
+                            <constraint firstItem="pl4-dX-0cg" firstAttribute="leading" secondItem="rcQ-mh-QgB" secondAttribute="leading" id="TLV-Jr-AEX"/>
                             <constraint firstItem="MKe-Ev-Q4i" firstAttribute="top" secondItem="bjm-vc-CwK" secondAttribute="top" id="VRm-bL-5di"/>
                             <constraint firstItem="1bI-1g-rAr" firstAttribute="leading" secondItem="fqu-IM-5fi" secondAttribute="trailing" constant="8" id="XDf-wi-5YT"/>
                             <constraint firstItem="fqu-IM-5fi" firstAttribute="top" secondItem="Eye-UK-di9" secondAttribute="bottom" constant="10" id="XNM-qg-9hk"/>
@@ -552,12 +563,14 @@ Last Edited on 2014-10-13</string>
                             <constraint firstItem="rcQ-mh-QgB" firstAttribute="trailing" secondItem="bjm-vc-CwK" secondAttribute="trailingMargin" id="iBE-ox-5yj"/>
                             <constraint firstItem="rcQ-mh-QgB" firstAttribute="top" secondItem="1bI-1g-rAr" secondAttribute="bottom" constant="8" id="oxJ-oz-GeL"/>
                             <constraint firstItem="1bI-1g-rAr" firstAttribute="top" secondItem="Eye-UK-di9" secondAttribute="bottom" constant="10" id="p1g-Ub-UFN"/>
+                            <constraint firstItem="12E-WH-SKv" firstAttribute="top" secondItem="pl4-dX-0cg" secondAttribute="bottom" constant="29" id="pOw-Z0-48L"/>
                             <constraint firstItem="MKe-Ev-Q4i" firstAttribute="bottom" secondItem="xPL-eY-MnD" secondAttribute="top" id="qbg-Uk-MBj"/>
                             <constraint firstItem="1bI-1g-rAr" firstAttribute="top" secondItem="Eye-UK-di9" secondAttribute="bottom" constant="10" id="rb3-fx-eEN"/>
                             <constraint firstItem="rcQ-mh-QgB" firstAttribute="leading" secondItem="fqu-IM-5fi" secondAttribute="trailing" constant="8" id="yuj-sM-5hV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountType" destination="pl4-dX-0cg" id="9am-Lf-70q"/>
                         <outlet property="menuTableView" destination="12E-WH-SKv" id="Sss-b3-f9Z"/>
                         <outlet property="userProfileImageView" destination="fqu-IM-5fi" id="AgT-HQ-OOp"/>
                         <outlet property="userProfileName" destination="rcQ-mh-QgB" id="Tlb-U0-FJK"/>
@@ -895,7 +908,32 @@ Last Edited on 2014-10-13</string>
                     <view key="view" contentMode="scaleToFill" id="Nqi-tZ-B2r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mjo-uC-W7b">
+                                <rect key="frame" x="175" y="132" width="251" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="KU5-s1-sBX"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="iBeacon"/>
+                                    <segment title="Region Monitoring"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the mode you would like to use for this device:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-yE-GJj">
+                                <rect key="frame" x="95.5" y="72" width="409.5" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="mjo-uC-W7b" secondAttribute="bottom" constant="440" id="47F-0Q-C9N"/>
+                            <constraint firstItem="KUg-yE-GJj" firstAttribute="top" secondItem="vEi-Rg-7wz" secondAttribute="bottom" constant="8" symbolic="YES" id="4R0-h8-8b9"/>
+                            <constraint firstItem="KUg-yE-GJj" firstAttribute="centerX" secondItem="mjo-uC-W7b" secondAttribute="centerX" id="8o8-y9-4k9"/>
+                            <constraint firstItem="mjo-uC-W7b" firstAttribute="top" secondItem="KUg-yE-GJj" secondAttribute="bottom" constant="8" symbolic="YES" id="Hg9-Dh-8LE"/>
+                            <constraint firstItem="mjo-uC-W7b" firstAttribute="centerX" secondItem="Nqi-tZ-B2r" secondAttribute="centerX" id="oza-gk-CH3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="LKT-Ys-K1A">
                         <barButtonItem key="leftBarButtonItem" image="menu_black.png" id="ZQx-0t-K2r">
@@ -905,6 +943,9 @@ Last Edited on 2014-10-13</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="mjo-uC-W7b" id="qr0-it-PTD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaW-N0-qMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -947,7 +988,22 @@ Last Edited on 2014-10-13</string>
                     <view key="view" contentMode="scaleToFill" id="8DB-Vb-a2a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-pf-l9l">
+                                <rect key="frame" x="272" y="285" width="56" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="Mxu-ar-KxX" eventType="touchUpInside" id="CZ1-ap-aRM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MY8-pf-l9l" firstAttribute="centerY" secondItem="8DB-Vb-a2a" secondAttribute="centerY" id="GLC-6e-2bk"/>
+                            <constraint firstItem="MY8-pf-l9l" firstAttribute="centerX" secondItem="8DB-Vb-a2a" secondAttribute="centerX" id="wuU-vQ-V8m"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="j8f-yc-I3L">
                         <barButtonItem key="leftBarButtonItem" image="menu_black.png" id="kQf-pr-GOX">

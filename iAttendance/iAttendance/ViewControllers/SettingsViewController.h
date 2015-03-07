@@ -11,4 +11,5 @@
 @interface SettingsViewController : UIViewController
 
 - (IBAction)menuButtonPressed:(id)sender;
+- (IBAction)logOutButtonPressed:(id)sender;
 @end

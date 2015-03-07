@@ -30,8 +30,9 @@
     self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
     
     // Populate user information
-    [self updateViewForUserInformation];
-    
+    if ([PFUser currentUser]) {
+        [self updateViewForUserInformation];
+    }
     
     // Round Profile Image
     // Get the Layer of any view
@@ -76,6 +77,28 @@
 - (void) updateViewForUserInformation
 {
     self.userProfileName.text = [PFUser currentUser].username;
+    
+    PFQuery *query = [PFUser query];
+    
+    [query whereKey:@"username" equalTo:[PFUser currentUser].username];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu objects.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                //[object objectForKey:@"firstName"];
+                self.accountType.text = [NSString stringWithFormat:@"%@",[object objectForKey:@"type"]];
+                NSLog(@"%@", object.objectId);
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+
     //self.userProfileImageView.image = [UIImage imageNamed:@"wood.jpg"];
 }
 

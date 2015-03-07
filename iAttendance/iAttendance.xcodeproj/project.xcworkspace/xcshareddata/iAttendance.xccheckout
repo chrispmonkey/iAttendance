@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>80168EEA-EA54-4002-A4A1-65A7E5BF143E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iAttendance</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1B56ECF8055639CF17485D9A586AB8FEE38F845C</key>
+		<string>https://github.com/chrispmonkey/iAttendance.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iAttendance/iAttendance.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1B56ECF8055639CF17485D9A586AB8FEE38F845C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chrispmonkey/iAttendance.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1B56ECF8055639CF17485D9A586AB8FEE38F845C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1B56ECF8055639CF17485D9A586AB8FEE38F845C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iAttendance</string>
+		</dict>
+	</array>
+</dict>
+</plist>

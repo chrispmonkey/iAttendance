@@ -95,6 +95,12 @@
 		A79FAAB11AAAEFBC00A9946A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAB01AAAEFBC00A9946A /* ProfileViewController.m */; };
 		A79FAAB51AAAEFD200A9946A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAB41AAAEFD200A9946A /* SettingsViewController.m */; };
 		A79FAAB71AAAF78400A9946A /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A79FAAB61AAAF78400A9946A /* background.jpg */; };
+		A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */; };
+		A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABA1AAB081C00A9946A /* UIKit.framework */; };
+		A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABC1AAB082A00A9946A /* Foundation.framework */; };
+		A79FAAC01AAB0AB400A9946A /* CSMLocationUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */; };
+		A79FAAC51AAB0AEE00A9946A /* CSMBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */; };
+		A79FAAC61AAB0AEE00A9946A /* CSMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +245,15 @@
 		A79FAAB31AAAEFD200A9946A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewControllers/SettingsViewController.h; sourceTree = "<group>"; };
 		A79FAAB41AAAEFD200A9946A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewControllers/SettingsViewController.m; sourceTree = "<group>"; };
 		A79FAAB61AAAF78400A9946A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		A79FAABA1AAB081C00A9946A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A79FAABC1AAB082A00A9946A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A79FAABE1AAB0AB400A9946A /* CSMLocationUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMLocationUpdateController.h; path = ViewControllers/CSMLocationUpdateController.h; sourceTree = "<group>"; };
+		A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMLocationUpdateController.m; path = ViewControllers/CSMLocationUpdateController.m; sourceTree = "<group>"; };
+		A79FAAC11AAB0AEE00A9946A /* CSMBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMBeaconRegion.h; path = ViewControllers/CSMBeaconRegion.h; sourceTree = "<group>"; };
+		A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMBeaconRegion.m; path = ViewControllers/CSMBeaconRegion.m; sourceTree = "<group>"; };
+		A79FAAC31AAB0AEE00A9946A /* CSMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMLocationManager.h; path = ViewControllers/CSMLocationManager.h; sourceTree = "<group>"; };
+		A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMLocationManager.m; path = ViewControllers/CSMLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +261,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */,
+				A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */,
+				A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */,
 				A79FAA491AAACE8400A9946A /* libsqlite3.dylib in Frameworks */,
 				A79FAA471AAACE7A00A9946A /* libz.dylib in Frameworks */,
 				A79FAA451AAACE7100A9946A /* SystemConfiguration.framework in Frameworks */,
@@ -280,6 +298,10 @@
 		A79FA9A91AAAC5FC00A9946A = {
 			isa = PBXGroup;
 			children = (
+				A79FAABC1AAB082A00A9946A /* Foundation.framework */,
+				A79FAABA1AAB081C00A9946A /* UIKit.framework */,
+				A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */,
+				A79FA9B41AAAC5FC00A9946A /* iAttendance */,
 				A79FAA481AAACE8400A9946A /* libsqlite3.dylib */,
 				A79FAA461AAACE7A00A9946A /* libz.dylib */,
 				A79FAA441AAACE7100A9946A /* SystemConfiguration.framework */,
@@ -293,7 +315,6 @@
 				A79FAA341AAACE0500A9946A /* CFNetwork.framework */,
 				A79FAA321AAACDFC00A9946A /* AudioToolbox.framework */,
 				A79FAA301AAACDF300A9946A /* Accounts.framework */,
-				A79FA9B41AAAC5FC00A9946A /* iAttendance */,
 				A79FA9CE1AAAC5FC00A9946A /* iAttendanceTests */,
 				A79FA9B31AAAC5FC00A9946A /* Products */,
 			);
@@ -311,6 +332,12 @@
 		A79FA9B41AAAC5FC00A9946A /* iAttendance */ = {
 			isa = PBXGroup;
 			children = (
+				A79FAAC11AAB0AEE00A9946A /* CSMBeaconRegion.h */,
+				A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */,
+				A79FAAC31AAB0AEE00A9946A /* CSMLocationManager.h */,
+				A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */,
+				A79FAABE1AAB0AB400A9946A /* CSMLocationUpdateController.h */,
+				A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */,
 				A79FAAB21AAAEFC100A9946A /* Settings View Controller */,
 				A79FAAAE1AAAEFA000A9946A /* Profile View Controller */,
 				A79FAA761AAAECA600A9946A /* METransitions.h */,
@@ -631,6 +658,11 @@
 				TargetAttributes = {
 					A79FA9B11AAAC5FC00A9946A = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A79FA9CA1AAAC5FC00A9946A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -713,6 +745,7 @@
 				A79FAA131AAACC6F00A9946A /* FUISwitch.m in Sources */,
 				A79FAA1A1AAACC6F00A9946A /* UIPopoverController+FlatUI.m in Sources */,
 				A79FAA7F1AAAECA600A9946A /* METransitions.m in Sources */,
+				A79FAAC51AAB0AEE00A9946A /* CSMBeaconRegion.m in Sources */,
 				A79FAA1E1AAACC6F00A9946A /* UITabBar+FlatUI.m in Sources */,
 				A79FAA661AAAE1A600A9946A /* ECSlidingSegue.m in Sources */,
 				A79FAA1B1AAACC6F00A9946A /* UIProgressView+FlatUI.m in Sources */,
@@ -723,6 +756,7 @@
 				A79FAA141AAACC6F00A9946A /* FUITextField.m in Sources */,
 				A79FAA201AAACC6F00A9946A /* UIToolbar+FlatUI.m in Sources */,
 				A79FAAB51AAAEFD200A9946A /* SettingsViewController.m in Sources */,
+				A79FAAC61AAB0AEE00A9946A /* CSMLocationManager.m in Sources */,
 				A79FAA801AAAECA600A9946A /* MEDynamicTransition.m in Sources */,
 				A79FAA811AAAECA600A9946A /* MEFoldAnimationController.m in Sources */,
 				A79FAA671AAAE1A600A9946A /* ECSlidingViewController.m in Sources */,
@@ -734,6 +768,7 @@
 				A79FAA1F1AAACC6F00A9946A /* UITableViewCell+FlatUI.m in Sources */,
 				A79FAA151AAACC6F00A9946A /* UIBarButtonItem+FlatUI.m in Sources */,
 				A79FAAB11AAAEFBC00A9946A /* ProfileViewController.m in Sources */,
+				A79FAAC01AAB0AB400A9946A /* CSMLocationUpdateController.m in Sources */,
 				A79FAA101AAACC6F00A9946A /* FUICellBackgroundView.m in Sources */,
 				A79FAA631AAAE1A600A9946A /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				A79FAA1D1AAACC6F00A9946A /* UIStepper+FlatUI.m in Sources */,
