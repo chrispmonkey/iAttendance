@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlatUIKit.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<FUIAlertViewDelegate>
 
 - (IBAction)menuButtonPressed:(id)sender;
 

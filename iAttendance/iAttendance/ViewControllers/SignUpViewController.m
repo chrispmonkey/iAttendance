@@ -52,15 +52,15 @@ UITextField *activeField;
     // FLAT UIKIT BUTTON CUSTOMIZATIONS
     // SignIn Button
     
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    //[[UIImage imageNamed:@"login_background_blur.png"] drawInRect:self.view.bounds];
-    [[UIImage imageNamed:@"spotter_alt_login_background.png"] drawInRect:self.view.frame];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    self.signUpButton.buttonColor = [UIColor sunflowerColor];
-    self.signUpButton.shadowColor = [UIColor colorFromHexCode:@"c19d0b"];
+//    UIGraphicsBeginImageContext(self.view.frame.size);
+//    //[[UIImage imageNamed:@"login_background_blur.png"] drawInRect:self.view.bounds];
+//    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.frame];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    self.signUpButton.buttonColor = [UIColor concreteColor];
+    self.signUpButton.shadowColor = [UIColor asbestosColor];
     self.signUpButton.shadowHeight = 3.0f;
     self.signUpButton.cornerRadius = 6.0f;
     //self.signUpButton.titleLabel.font = [UIFont boldFlatFontOfSize:30];
@@ -79,6 +79,10 @@ UITextField *activeField;
     [self.view addGestureRecognizer:tap];
     [self registerForKeyboardNotifications];
 
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

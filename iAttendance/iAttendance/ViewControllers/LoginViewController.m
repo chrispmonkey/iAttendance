@@ -31,8 +31,8 @@ UITextField *activeField;
     
     // FLAT UIKIT BUTTON CUSTOMIZATIONS
     // SignIn Button
-    self.signInButton.buttonColor = [UIColor sunflowerColor];
-    self.signInButton.shadowColor = [UIColor colorFromHexCode:@"c19d0b"];
+    self.signInButton.buttonColor = [UIColor concreteColor];
+    self.signInButton.shadowColor = [UIColor asbestosColor];
     self.signInButton.shadowHeight = 3.0f;
     self.signInButton.cornerRadius = 6.0f;
     //self.signInButton.titleLabel.font = [UIFont boldFlatFontOfSize:30];
@@ -62,13 +62,13 @@ UITextField *activeField;
         // TODO: Add fall-back code to set placeholder color.
     }
     
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    
-    [[UIImage imageNamed:@"spotter_alt_login_background.png"] drawInRect:self.view.frame];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+//    UIGraphicsBeginImageContext(self.view.frame.size);
+//    
+//    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.frame];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismissKeyboard)];
@@ -95,6 +95,11 @@ UITextField *activeField;
     //[self login];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+
 - (void)checkBluetooth
 {
     
@@ -103,10 +108,6 @@ UITextField *activeField;
 - (void)viewDidAppear:(BOOL)animated
 {
     [self checkIfShouldLoadPrivacyPolicy];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
 }
 
 - (void)checkIfShouldLoadPrivacyPolicy
@@ -279,9 +280,9 @@ UITextField *activeField;
         // FOR TESTING PURPOSES
         //[self dismissViewControllerAnimated:YES completion:nil];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *timeLineNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"TimeLineNavigationController"];
+        UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
         
-        [self presentViewController:timeLineNavigationController animated:YES completion:nil];
+        [self presentViewController:homeNavigationController animated:YES completion:nil];
     }
     else{
         
@@ -309,9 +310,9 @@ UITextField *activeField;
                                             //[self dismissViewControllerAnimated:YES completion:nil];
                                             
                                             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                            UIViewController *timeLineNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"TimeLineNavigationController"];
+                                            UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
                                             
-                                            [self presentViewController:timeLineNavigationController animated:YES completion:nil];
+                                            [self presentViewController:homeNavigationController animated:YES completion:nil];
                                             
                                             
                                         } else {

@@ -50,6 +50,10 @@ NSDate *minutesSinceStart;
     [self startScrollTimer];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)startScrollTimer
 {
     // calls the updateLabel method every 0.1 seconds

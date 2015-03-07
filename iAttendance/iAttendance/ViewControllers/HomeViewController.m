@@ -87,6 +87,64 @@
     return YES;
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        
+        FUIAlertView * frustratedAlert =[[FUIAlertView alloc ] initWithTitle:@"Frustrated?"
+                                                                     message:@"Would you like our help?"
+                                                                    delegate:self
+                                                           cancelButtonTitle:@"No"
+                                                           otherButtonTitles: @"Yes", nil];
+        frustratedAlert.tag = 100;
+        frustratedAlert.titleLabel.textColor = [UIColor cloudsColor];
+        frustratedAlert.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        frustratedAlert.messageLabel.textColor = [UIColor cloudsColor];
+        frustratedAlert.messageLabel.font = [UIFont flatFontOfSize:14];
+        frustratedAlert.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+        frustratedAlert.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+        frustratedAlert.defaultButtonColor = [UIColor cloudsColor];
+        frustratedAlert.defaultButtonShadowColor = [UIColor asbestosColor];
+        frustratedAlert.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+        frustratedAlert.defaultButtonTitleColor = [UIColor asbestosColor];
+        
+        [frustratedAlert show];
+    }
+}
+
+// FUIALERT VIEW DELEGATES
+-(void)alertView:(FUIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100) {
+        if (buttonIndex == 1) {
+            NSLog(@"Shake Alert View Button Clicked");
+            
+            [PFUser logOut];
+            PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+            
+            // FOR TESTING PURPOSES
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            
+            [self presentViewController:loginViewController animated:YES completion:nil];
+        }
+        
+    }
+    else{
+        
+    }
+}
+
+- (void)alertView:(FUIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+}
+
+- (void)alertView:(FUIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+}
 
 - (IBAction)menuButtonPressed:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
