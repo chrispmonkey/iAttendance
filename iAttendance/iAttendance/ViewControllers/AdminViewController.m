@@ -19,6 +19,10 @@
    
     // Initialize location manager and set ourselves as the delegate
     //self.locationManager = [[CLLocationManager alloc] init];
+    if (![CLLocationManager isRangingAvailable]) {
+        NSLog(@"Range is not available");
+    }
+    
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
         // user allowed
@@ -32,6 +36,10 @@
                                                                       major:1
                                                                       minor:1
                                                                  identifier:@"com.appcoda.testregion"];
+        
+        if (![CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
+            NSLog(@"Beacon Range is not available");
+        }
     }else {
         [self.locationManager requestWhenInUseAuthorization];
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Service Disabled"
