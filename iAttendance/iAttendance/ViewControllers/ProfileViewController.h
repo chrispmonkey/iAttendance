@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECSlidingViewController.h"
+#import "FlatUIKit.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController<ECSlidingViewControllerDelegate, FUIAlertViewDelegate,UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *largeProfileImageView;
+@property (weak, nonatomic) IBOutlet UITableView *profileTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UIButton *changeProfileImageButton;
 
 - (IBAction)menuButtonPressed:(id)sender;
+- (IBAction)changeProfileImageButtonPressed:(id)sender;
 
 @end

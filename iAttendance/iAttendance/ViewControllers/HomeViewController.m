@@ -10,18 +10,13 @@
 #import "UIViewController+ECSlidingViewController.h"
 #import "MEDynamicTransition.h"
 #import "METransitions.h"
-#import "CSMLocationUpdateController.h"
 
 #import <Parse/Parse.h>
 
-#define kHorizontalPadding 20
-#define kVerticalPadding 10
-
 @interface HomeViewController ()
+
 @property (nonatomic, strong) METransitions *transitions;
 @property (nonatomic, strong) UIPanGestureRecognizer *dynamicTransitionPanGesture;
-
-@property (nonatomic, strong) UILabel            *instructionLabel;
 
 @end
 
@@ -31,51 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[self buildToggleControl];
     [self.segmentedControl addTarget:self action:@selector(handleToggle:) forControlEvents:UIControlEventValueChanged];
     
     self.transitions.dynamicTransition.slidingViewController = self.slidingViewController;
-}
-
-- (void)buildToggleControl
-{
-//    self.instructionLabel = [UILabel new];
-//    self.instructionLabel.textAlignment = NSTextAlignmentCenter;
-//    self.instructionLabel.preferredMaxLayoutWidth = self.view.frame.size.width - 2*kHorizontalPadding;
-//    self.instructionLabel.numberOfLines = 0;
-//    self.instructionLabel.text = @"Select the mode you would like to use for this device:";
-//    self.instructionLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    [self.view addSubview:self.instructionLabel];
+    CLLocationManager *locationManager;
+    locationManager = [[CLLocationManager alloc] init];
     
-//    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"iBeacon",@"Region Monitoring"]];
-//    self.segmentedControl.momentary = YES;
-//    self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.segmentedControl addTarget:self action:@selector(handleToggle:) forControlEvents:UIControlEventValueChanged];
-    //[self.view addSubview:self.segmentedControl];
-    
-//    // define auto layout constraints
-//    NSDictionary *constraintMetrics = @{@"horizontalPadding" : @kHorizontalPadding,
-//                                        @"verticalPadding" : @(5*kVerticalPadding),
-//                                        @"verticalSpacing" : @(2*kVerticalPadding)};
-//    NSDictionary *constraintViews = @{@"label" : self.instructionLabel,
-//                                      @"segmentedControl" : self.segmentedControl,
-//                                      @"topGuide" : self.topLayoutGuide};
-//    
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-horizontalPadding-[label]-horizontalPadding-|"
-//                                                                      options:0
-//                                                                      metrics:constraintMetrics
-//                                                                        views:constraintViews]];
-//    
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-horizontalPadding-[segmentedControl]-horizontalPadding-|"
-//                                                                      options:0
-//                                                                      metrics:constraintMetrics
-//                                                                        views:constraintViews]];
-//    
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topGuide]-verticalPadding-[label]-verticalSpacing-[segmentedControl(==60)]-(>=verticalPadding)-|"
-//                                                                      options:0
-//                                                                      metrics:constraintMetrics
-//                                                                        views:constraintViews]];
-
+    [locationManager requestWhenInUseAuthorization];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -204,21 +161,6 @@
 
 - (void)handleToggle:(id)sender {
     
-    CSMLocationUpdateController *monitoringController;
     
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
-        
-        // initiate iBeacon broadcasting mode
-        monitoringController = [[CSMLocationUpdateController alloc] initWithLocationMode:ApplicationModePeripheral];
-        
-    } else {
-        
-        // initate peripheral iBeacon monitoring mode
-        monitoringController = [[CSMLocationUpdateController alloc] initWithLocationMode:ApplicationModeRegionMonitoring];
-    }
-    
-    // present update controller
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:monitoringController];
-    [self presentViewController:navController animated:YES completion:NULL];
 }
 @end

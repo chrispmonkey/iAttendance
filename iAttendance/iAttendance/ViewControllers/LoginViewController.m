@@ -307,12 +307,12 @@ UITextField *activeField;
                                             // Do stuff after successful login.
                                             NSLog(@"User successfully logged in!");
                                             
-                                            //[self dismissViewControllerAnimated:YES completion:nil];
+                                            [self dismissViewControllerAnimated:YES completion:nil];
                                             
-                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                            UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
-                                            
-                                            [self presentViewController:homeNavigationController animated:YES completion:nil];
+//                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                                            UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+//                                            
+//                                            [self presentViewController:homeNavigationController animated:YES completion:nil];
                                             
                                             
                                         } else {

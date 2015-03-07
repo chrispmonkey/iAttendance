@@ -98,9 +98,10 @@
 		A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */; };
 		A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABA1AAB081C00A9946A /* UIKit.framework */; };
 		A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABC1AAB082A00A9946A /* Foundation.framework */; };
-		A79FAAC01AAB0AB400A9946A /* CSMLocationUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */; };
-		A79FAAC51AAB0AEE00A9946A /* CSMBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */; };
-		A79FAAC61AAB0AEE00A9946A /* CSMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */; };
+		A7C2131E1AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C213191AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m */; };
+		A7C213201AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2131D1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m */; };
+		A7C213241AAB37240093CFFA /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C213231AAB37240093CFFA /* AdminViewController.m */; };
+		A7C213271AAB37AC0093CFFA /* AttendeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C213261AAB37AC0093CFFA /* AttendeeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,12 +249,14 @@
 		A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A79FAABA1AAB081C00A9946A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A79FAABC1AAB082A00A9946A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A79FAABE1AAB0AB400A9946A /* CSMLocationUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMLocationUpdateController.h; path = ViewControllers/CSMLocationUpdateController.h; sourceTree = "<group>"; };
-		A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMLocationUpdateController.m; path = ViewControllers/CSMLocationUpdateController.m; sourceTree = "<group>"; };
-		A79FAAC11AAB0AEE00A9946A /* CSMBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMBeaconRegion.h; path = ViewControllers/CSMBeaconRegion.h; sourceTree = "<group>"; };
-		A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMBeaconRegion.m; path = ViewControllers/CSMBeaconRegion.m; sourceTree = "<group>"; };
-		A79FAAC31AAB0AEE00A9946A /* CSMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMLocationManager.h; path = ViewControllers/CSMLocationManager.h; sourceTree = "<group>"; };
-		A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMLocationManager.m; path = ViewControllers/CSMLocationManager.m; sourceTree = "<group>"; };
+		A7C213181AAB230A0093CFFA /* ProfileAboutYouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileAboutYouTableViewCell.h; path = ViewControllers/ProfileAboutYouTableViewCell.h; sourceTree = "<group>"; };
+		A7C213191AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileAboutYouTableViewCell.m; path = ViewControllers/ProfileAboutYouTableViewCell.m; sourceTree = "<group>"; };
+		A7C2131C1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileUserDetailsTableViewCell.h; path = ViewControllers/ProfileUserDetailsTableViewCell.h; sourceTree = "<group>"; };
+		A7C2131D1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileUserDetailsTableViewCell.m; path = ViewControllers/ProfileUserDetailsTableViewCell.m; sourceTree = "<group>"; };
+		A7C213221AAB37240093CFFA /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminViewController.h; path = ViewControllers/AdminViewController.h; sourceTree = "<group>"; };
+		A7C213231AAB37240093CFFA /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminViewController.m; path = ViewControllers/AdminViewController.m; sourceTree = "<group>"; };
+		A7C213251AAB37AC0093CFFA /* AttendeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttendeeViewController.h; path = ViewControllers/AttendeeViewController.h; sourceTree = "<group>"; };
+		A7C213261AAB37AC0093CFFA /* AttendeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttendeeViewController.m; path = ViewControllers/AttendeeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,9 +264,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */,
 				A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */,
 				A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */,
-				A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */,
 				A79FAA491AAACE8400A9946A /* libsqlite3.dylib in Frameworks */,
 				A79FAA471AAACE7A00A9946A /* libz.dylib in Frameworks */,
 				A79FAA451AAACE7100A9946A /* SystemConfiguration.framework in Frameworks */,
@@ -332,12 +335,6 @@
 		A79FA9B41AAAC5FC00A9946A /* iAttendance */ = {
 			isa = PBXGroup;
 			children = (
-				A79FAAC11AAB0AEE00A9946A /* CSMBeaconRegion.h */,
-				A79FAAC21AAB0AEE00A9946A /* CSMBeaconRegion.m */,
-				A79FAAC31AAB0AEE00A9946A /* CSMLocationManager.h */,
-				A79FAAC41AAB0AEE00A9946A /* CSMLocationManager.m */,
-				A79FAABE1AAB0AB400A9946A /* CSMLocationUpdateController.h */,
-				A79FAABF1AAB0AB400A9946A /* CSMLocationUpdateController.m */,
 				A79FAAB21AAAEFC100A9946A /* Settings View Controller */,
 				A79FAAAE1AAAEFA000A9946A /* Profile View Controller */,
 				A79FAA761AAAECA600A9946A /* METransitions.h */,
@@ -524,6 +521,7 @@
 		A79FAA691AAAE24600A9946A /* Home View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7C213211AAB37090093CFFA /* Beacon Views */,
 				A79FAA6A1AAAE25900A9946A /* HomeViewController.h */,
 				A79FAA6B1AAAE25900A9946A /* HomeViewController.m */,
 			);
@@ -594,6 +592,7 @@
 		A79FAAAE1AAAEFA000A9946A /* Profile View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7C213171AAB22D90093CFFA /* Profile View Cells */,
 				A79FAAAF1AAAEFBC00A9946A /* ProfileViewController.h */,
 				A79FAAB01AAAEFBC00A9946A /* ProfileViewController.m */,
 			);
@@ -607,6 +606,28 @@
 				A79FAAB41AAAEFD200A9946A /* SettingsViewController.m */,
 			);
 			name = "Settings View Controller";
+			sourceTree = "<group>";
+		};
+		A7C213171AAB22D90093CFFA /* Profile View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A7C213181AAB230A0093CFFA /* ProfileAboutYouTableViewCell.h */,
+				A7C213191AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m */,
+				A7C2131C1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.h */,
+				A7C2131D1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m */,
+			);
+			name = "Profile View Cells";
+			sourceTree = "<group>";
+		};
+		A7C213211AAB37090093CFFA /* Beacon Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7C213221AAB37240093CFFA /* AdminViewController.h */,
+				A7C213231AAB37240093CFFA /* AdminViewController.m */,
+				A7C213251AAB37AC0093CFFA /* AttendeeViewController.h */,
+				A7C213261AAB37AC0093CFFA /* AttendeeViewController.m */,
+			);
+			name = "Beacon Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,6 +679,7 @@
 				TargetAttributes = {
 					A79FA9B11AAAC5FC00A9946A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QCHSMSH3C7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -743,9 +765,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A79FAA131AAACC6F00A9946A /* FUISwitch.m in Sources */,
+				A7C2131E1AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m in Sources */,
 				A79FAA1A1AAACC6F00A9946A /* UIPopoverController+FlatUI.m in Sources */,
 				A79FAA7F1AAAECA600A9946A /* METransitions.m in Sources */,
-				A79FAAC51AAB0AEE00A9946A /* CSMBeaconRegion.m in Sources */,
 				A79FAA1E1AAACC6F00A9946A /* UITabBar+FlatUI.m in Sources */,
 				A79FAA661AAAE1A600A9946A /* ECSlidingSegue.m in Sources */,
 				A79FAA1B1AAACC6F00A9946A /* UIProgressView+FlatUI.m in Sources */,
@@ -756,9 +778,9 @@
 				A79FAA141AAACC6F00A9946A /* FUITextField.m in Sources */,
 				A79FAA201AAACC6F00A9946A /* UIToolbar+FlatUI.m in Sources */,
 				A79FAAB51AAAEFD200A9946A /* SettingsViewController.m in Sources */,
-				A79FAAC61AAB0AEE00A9946A /* CSMLocationManager.m in Sources */,
 				A79FAA801AAAECA600A9946A /* MEDynamicTransition.m in Sources */,
 				A79FAA811AAAECA600A9946A /* MEFoldAnimationController.m in Sources */,
+				A7C213271AAB37AC0093CFFA /* AttendeeViewController.m in Sources */,
 				A79FAA671AAAE1A600A9946A /* ECSlidingViewController.m in Sources */,
 				A79FAA191AAACC6F00A9946A /* UINavigationBar+FlatUI.m in Sources */,
 				A79FAA541AAAD87A00A9946A /* SignUpViewController.m in Sources */,
@@ -768,13 +790,13 @@
 				A79FAA1F1AAACC6F00A9946A /* UITableViewCell+FlatUI.m in Sources */,
 				A79FAA151AAACC6F00A9946A /* UIBarButtonItem+FlatUI.m in Sources */,
 				A79FAAB11AAAEFBC00A9946A /* ProfileViewController.m in Sources */,
-				A79FAAC01AAB0AB400A9946A /* CSMLocationUpdateController.m in Sources */,
 				A79FAA101AAACC6F00A9946A /* FUICellBackgroundView.m in Sources */,
 				A79FAA631AAAE1A600A9946A /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				A79FAA1D1AAACC6F00A9946A /* UIStepper+FlatUI.m in Sources */,
 				A79FAA6C1AAAE25900A9946A /* HomeViewController.m in Sources */,
 				A79FA9BB1AAAC5FC00A9946A /* AppDelegate.m in Sources */,
 				A79FAA681AAAE1A600A9946A /* UIViewController+ECSlidingViewController.m in Sources */,
+				A7C213201AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m in Sources */,
 				A79FAA121AAACC6F00A9946A /* FUISegmentedControl.m in Sources */,
 				A79FAA181AAACC6F00A9946A /* UIImage+FlatUI.m in Sources */,
 				A79FAA651AAAE1A600A9946A /* ECSlidingInteractiveTransition.m in Sources */,
@@ -782,6 +804,7 @@
 				A79FAA501AAAD24300A9946A /* PrivacyPolicyViewController.m in Sources */,
 				A79FA9B81AAAC5FC00A9946A /* main.m in Sources */,
 				A79FAA751AAAE37500A9946A /* MenuViewController.m in Sources */,
+				A7C213241AAB37240093CFFA /* AdminViewController.m in Sources */,
 				A79FAA111AAACC6F00A9946A /* FUIPopoverBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,6 +927,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iAttendance/parse-library",
@@ -911,6 +936,7 @@
 				INFOPLIST_FILE = iAttendance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -918,6 +944,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iAttendance/parse-library",
@@ -925,6 +953,7 @@
 				INFOPLIST_FILE = iAttendance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
