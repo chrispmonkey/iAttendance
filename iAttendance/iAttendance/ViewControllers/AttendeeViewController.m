@@ -155,14 +155,17 @@ bool touchIDAlertVisible;
 - (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion *)region
 {
     // We entered a region, now start looking for our target beacons!
-    self.statusLabel.text = @"Finding beacons.";
+    //self.statusLabel.text = @"Finding beacons.";
+    [self.activityIndicator startAnimating];
+    self.statusLabel.text = @"Searching...";
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
 }
 
 -(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion *)region
 {
     // Exited the region
-    self.statusLabel.text = @"None found.";
+    //self.statusLabel.text = @"None found.";
+    self.statusLabel.text = @"No Event Found";
     [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
 }
 
@@ -183,9 +186,10 @@ bool touchIDAlertVisible;
     if ([foundBeacon.proximityUUID.UUIDString isEqualToString:self.uuid.UUIDString]) {
         [manager stopMonitoringVisits];
         [manager stopMonitoringForRegion:self.myBeaconRegion];
-        self.statusLabel.text = [NSString stringWithFormat:@"Beacon found! %@", foundBeacon.proximityUUID];
+        //self.statusLabel.text = [NSString stringWithFormat:@"Beacon found! %@", foundBeacon.proximityUUID];
+        self.statusLabel.text = @"Event Found!";
         NSLog(@"Beacon found! %@", foundBeacon.proximityUUID);
-
+        [self.activityIndicator stopAnimating];
         if(touchIDAlertVisible == false){
             touchIDAlertVisible = true;
             [self checkInUsingTouchID];
@@ -203,7 +207,7 @@ bool touchIDAlertVisible;
 {
     LAContext *myContext = [[LAContext alloc] init];
     NSError *authError = nil;
-    NSString *myReasonString = @"Login to Spotter using TouchID";
+    NSString *myReasonString = @"Check-In to the Event using TouchID";
     
     if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
         [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
@@ -237,6 +241,8 @@ bool touchIDAlertVisible;
                                 } else {
                                     // Authenticate failed
                                     [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
+                                    self.statusLabel.text = @"Searching...";
+                                    [self.activityIndicator startAnimating];
                                     NSLog(@"Login Failed");
                                     
                                 }
