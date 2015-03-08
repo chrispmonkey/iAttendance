@@ -86,23 +86,49 @@ NSDate *minutesSinceStart;
     self.broadcastButton.titleLabel.font = [UIFont boldFlatFontOfSize:30];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    [self startEvent];
 
-    [self startAttendanceTimer];
 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void)startAttendanceTimer
+- (void)startEvent
 {
-    // calls the updateLabel method every 0.1 seconds
-    self.attendanceRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateViewForUserInformation) userInfo:nil repeats:YES];
-    startingTime = [NSDate date]; //store in object
+    // Check to make sure the event is up
+    
+    // If the class exists and exists
+    
+    PFQuery *eventRowQuery = [PFQuery queryWithClassName:@"Event"];
+    [eventRowQuery whereKey:@"uuid" equalTo:self.uuid.UUIDString];
+    
+    [eventRowQuery findObjectsInBackgroundWithBlock:^(NSArray *events, NSError *error) {
+        
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        format.dateFormat = @"dd-MM-yyyy";
+        
+        NSString *todaysDateString = [format stringFromDate:[NSDate new]];
+        NSString *eventDateString;
+        
+        for(PFObject* event in events){
+            eventDateString = [format stringFromDate:event.createdAt];
+            
+            if( [todaysDateString isEqualToString:eventDateString]){
+                [self startAttendanceTimer:event.objectId];
+            }
+            
+        }
+    }];
+
+    
 }
+
+
 /*
 #pragma mark - Navigation
 
@@ -113,10 +139,10 @@ NSDate *minutesSinceStart;
 }
 */
 
-- (void) updateViewForUserInformation
-{
+- (void) updateViewForUserInformation:(NSTimer *) theTimer{
+    NSString *objID = [[theTimer userInfo] objectForKey:@"objID"];
     PFQuery *eventQuery = [PFQuery queryWithClassName:@"Event"];
-    [eventQuery whereKey:@"eventId" equalTo:self.uuid.UUIDString];
+    [eventQuery whereKey:@"objectId" equalTo:objID ];
     
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -125,7 +151,7 @@ NSDate *minutesSinceStart;
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
-                self.attendanceCountLabel.text = [object objectForKey:@"attendance"];
+                self.attendanceCountLabel.text = [NSString stringWithFormat:@"%@", [object valueForKey:@"attendance"]];
             }
         } else {
             // Log details of the failure
@@ -133,6 +159,24 @@ NSDate *minutesSinceStart;
         }
     }];
     //self.userProfileImageView.image = [UIImage imageNamed:@"wood.jpg"];
+}
+
+- (void)startAttendanceTimer:(NSString *)objectID{
+    // calls the updateLabel method every 0.1 seconds
+//    self.attendanceRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:10.00 target:self selector:@selector(updateViewForUserInformation:) withObject:objectID repeats:YES];
+//    SEL foo = @selector(updateViewForUserInformation:);
+//    self.attendanceRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:foo userInfo:objectID repeats:YES];
+    
+
+    NSDictionary *bullshit;
+    bullshit = [NSDictionary dictionaryWithObjectsAndKeys:objectID,@"objID",nil];
+    
+    [NSTimer scheduledTimerWithTimeInterval:10.0
+                                     target:self
+                                   selector:@selector(updateViewForUserInformation:)
+                                   userInfo:bullshit
+                                    repeats:YES];
+    startingTime = [NSDate date]; //store in object
 }
 
 - (IBAction)backButtonPressed:(id)sender {
@@ -150,6 +194,10 @@ NSDate *minutesSinceStart;
 }
 
 - (IBAction)stopButtonPressed:(id)sender {
+    
+    //self.peripheralManager.state =
+   // [self peripheralManagerDidUpdateState:self.peripheralManager];
+    
 }
 
 -(void)peripheralManagerDidUpdateState:(CBPeripheralManager*)peripheral
