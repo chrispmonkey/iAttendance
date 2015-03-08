@@ -40,6 +40,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.adminButton.hidden = YES;
+    self.attendeeButton.hidden = YES;
     [super viewWillAppear:animated];
     
     // Makes the menu appear smoothly by adding the appropriate gesture recognizers
@@ -75,9 +77,11 @@
                 //[object objectForKey:@"firstName"];
                 if ([[object objectForKey:@"type"] isEqualToString:@"admin"]) {
                     self.attendeeButton.hidden = YES;
+                    self.adminButton.hidden = YES;
                 }else if ([[object objectForKey:@"type"] isEqualToString:@"attendee"])
                 {
                     self.adminButton.hidden = YES;
+                    self.attendeeButton.hidden = NO;
                 }
             }
         } else {

@@ -24,7 +24,7 @@
 @end
 
 @implementation AttendeeViewController
-
+bool touchIDAlertVisible;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -102,6 +102,10 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    touchIDAlertVisible = false;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -177,10 +181,15 @@
 
     
     if ([foundBeacon.proximityUUID.UUIDString isEqualToString:self.uuid.UUIDString]) {
+        [manager stopMonitoringVisits];
+        [manager stopMonitoringForRegion:self.myBeaconRegion];
         self.statusLabel.text = [NSString stringWithFormat:@"Beacon found! %@", foundBeacon.proximityUUID];
         NSLog(@"Beacon found! %@", foundBeacon.proximityUUID);
-        
-        [self checkInUsingTouchID];
+
+        if(touchIDAlertVisible == false){
+            touchIDAlertVisible = true;
+            [self checkInUsingTouchID];
+        }
     }
     //NSLog(@"Beacon found! %@", foundBeacon.proximityUUID);
     // You can retrieve the beacon data from its properties
@@ -208,17 +217,18 @@
                                     // Ask user for the object ID (AKA Event Code)
                                     PFQuery *eventRowQuery = [PFQuery queryWithClassName:@"Event"];
                                     [eventRowQuery whereKey:@"uuid" equalTo:self.uuid.UUIDString];
-                                    NSArray* events = [eventRowQuery findObjects];
+                                    NSMutableArray* events = [eventRowQuery findObjects];
                                     
-                                    NSString *objectId = events[0];
+                                    NSString *objectId = ((PFObject*)events[0]).objectId;
                                     
-                                    NSString *eventCode = objectId;
+                                    
+                                    
                                     // Create a pointer to an object of class Point with id dlkj83d
-                                    PFObject *eventCheckin = [PFObject objectWithoutDataWithClassName:@"Event" objectId:eventCode];
+                                    PFObject *eventCheckin = [PFObject objectWithoutDataWithClassName:@"Event" objectId:objectId];
                                     
                                     // Increment the current value of the attendance key by 1
                                     [eventCheckin incrementKey:@"attendance"];
-                                    
+                                    [eventCheckin addObject:[[PFUser currentUser] username] forKey:@"attendees"];
                                     // Save
                                     [eventCheckin save];
                                     
@@ -226,6 +236,7 @@
                                     //[self dismissViewControllerAnimated:YES completion:nil];
                                 } else {
                                     // Authenticate failed
+                                    [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
                                     NSLog(@"Login Failed");
                                     
                                 }
