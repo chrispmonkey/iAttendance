@@ -205,6 +205,10 @@
 }
 
 
+- (IBAction)eventsButtonPressed:(id)sender {
+    
+}
+
 - (IBAction)menuButtonPressed:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
@@ -219,6 +223,8 @@
     [self presentViewController:imagePickController animated:YES completion:nil];
 
 }
+
+
 
 #pragma mark - UIImagePickerControllerDelegate
 

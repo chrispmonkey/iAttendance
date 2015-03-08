@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *profileTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIButton *changeProfileImageButton;
+- (IBAction)eventsButtonPressed:(id)sender;
 
 - (IBAction)menuButtonPressed:(id)sender;
 - (IBAction)changeProfileImageButtonPressed:(id)sender;
