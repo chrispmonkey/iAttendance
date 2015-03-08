@@ -22,27 +22,32 @@
 
 @end
 
+//NSDate *startingTime;
+//NSDate *minutesSinceStart;
+
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.segmentedControl addTarget:self action:@selector(handleToggle:) forControlEvents:UIControlEventValueChanged];
     self.view.backgroundColor = [UIColor clearColor];
     self.transitions.dynamicTransition.slidingViewController = self.slidingViewController;
     CLLocationManager *locationManager;
     
     [self setNeedsStatusBarAppearanceUpdate];
    
-    
     locationManager = [[CLLocationManager alloc] init];
     
     [locationManager requestWhenInUseAuthorization];
+    
+    //[self startFadeTimer];
 }
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     self.adminButton.hidden = YES;
@@ -59,6 +64,8 @@
     if ([PFUser currentUser]) {
         [self updateViewForUserInformation];
     }
+    
+    
 }
 
 
@@ -84,7 +91,7 @@
                 if ([[object objectForKey:@"type"] isEqualToString:@"admin"]) {
                     self.attendeeButton.hidden = YES;
                     self.adminButton.hidden = NO;
-                    self.questionButton.hidden = NO;
+                    self.questionButton.hidden = YES;
                 }else if ([[object objectForKey:@"type"] isEqualToString:@"attendee"])
                 {
                     self.adminButton.hidden = YES;
@@ -214,5 +221,34 @@
 - (void)handleToggle:(id)sender {
     
     
+}
+- (IBAction)infoButtonPressed:(id)sender {
+    
+    [self displayComposerSheet];
+}
+
+-(void)displayComposerSheet
+{
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    [picker setSubject:@"Feedback from iAttend"];
+    
+    // Set up the recipients.
+    NSArray *toRecipients = [NSArray arrayWithObjects:@"chris@chrislprice.com",
+                             nil];
+    
+    [picker setToRecipients:toRecipients];
+    
+    // Present the mail composition interface.
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+// The mail compose view controller delegate method
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

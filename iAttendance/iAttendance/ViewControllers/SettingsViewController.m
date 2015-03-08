@@ -81,10 +81,6 @@
  }
  */
 
--(BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
 - (IBAction)menuButtonPressed:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }

@@ -86,10 +86,14 @@ NSDate *minutesSinceStart;
     self.broadcastButton.titleLabel.font = [UIFont boldFlatFontOfSize:30];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
-    [self startEvent];
+    //[self startEvent];
     
+    self.MapView.showsUserLocation = YES;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -189,6 +193,10 @@ NSDate *minutesSinceStart;
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self
                                                                      queue:nil
                                                                    options:nil];
+    [self startEvent];
+    [self.activityIndicator startAnimating];
+    [self.stopButton setEnabled:YES];
+    [self.broadcastButton setEnabled:NO];
 }
 
 - (IBAction)stopButtonPressed:(id)sender {
@@ -197,6 +205,9 @@ NSDate *minutesSinceStart;
     //self.peripheralManager.state = CBPeripheralManagerStatePoweredOff;
     self.statusLabel.text = @"Stopped";
    // [self peripheralManagerDidUpdateState:self.peripheralManager];
+    [self.activityIndicator stopAnimating];
+    [self.stopButton setEnabled:NO];
+    [self.broadcastButton setEnabled:YES];
     
 }
 

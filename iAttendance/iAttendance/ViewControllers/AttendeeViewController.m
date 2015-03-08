@@ -26,6 +26,7 @@
 @implementation AttendeeViewController
 bool touchIDAlertVisible;
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // Initialize location manager and set ourselves as the delegate
@@ -97,9 +98,13 @@ bool touchIDAlertVisible;
         [alert show];
     }
     
+    self.mapView.showsUserLocation = YES;
+    
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+}
 
-
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -237,6 +242,8 @@ bool touchIDAlertVisible;
                                     [eventCheckin save];
                                     
                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"userCheckedIn"];
+
                                     //[self dismissViewControllerAnimated:YES completion:nil];
                                 } else {
                                     // Authenticate failed

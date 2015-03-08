@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "FlatUIKit.h"
+#import <MapKit/MapKit.h>
 
 @interface AttendeeViewController : UIViewController <CLLocationManagerDelegate, FUIAlertViewDelegate>
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)backButtonPressed:(id)sender;
 
 @end

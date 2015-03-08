@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
+#import <MessageUI/MessageUI.h>
 
-@interface HomeViewController : UIViewController<FUIAlertViewDelegate>
+@interface HomeViewController : UIViewController<FUIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 
 - (IBAction)menuButtonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *adminButton;
 @property (weak, nonatomic) IBOutlet UIButton *attendeeButton;
+@property (weak, nonatomic) NSTimer *fadeTimer;
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)infoButtonPressed:(id)sender;
 
 @end

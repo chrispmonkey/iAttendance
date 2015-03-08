@@ -117,6 +117,7 @@
 		A79FAAB91AAB080700A9946A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */; };
 		A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABA1AAB081C00A9946A /* UIKit.framework */; };
 		A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79FAABC1AAB082A00A9946A /* Foundation.framework */; };
+		A7AB19C11AAC6504009B411C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AB19C01AAC6504009B411C /* MapKit.framework */; };
 		A7C2131E1AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C213191AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m */; };
 		A7C213201AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2131D1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.m */; };
 		A7C213241AAB37240093CFFA /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C213231AAB37240093CFFA /* AdminViewController.m */; };
@@ -317,6 +318,7 @@
 		A79FAAB81AAB080700A9946A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A79FAABA1AAB081C00A9946A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A79FAABC1AAB082A00A9946A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A7AB19C01AAC6504009B411C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A7C213181AAB230A0093CFFA /* ProfileAboutYouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileAboutYouTableViewCell.h; path = ViewControllers/ProfileAboutYouTableViewCell.h; sourceTree = "<group>"; };
 		A7C213191AAB230A0093CFFA /* ProfileAboutYouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileAboutYouTableViewCell.m; path = ViewControllers/ProfileAboutYouTableViewCell.m; sourceTree = "<group>"; };
 		A7C2131C1AAB230A0093CFFA /* ProfileUserDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileUserDetailsTableViewCell.h; path = ViewControllers/ProfileUserDetailsTableViewCell.h; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				A79FAABD1AAB082A00A9946A /* Foundation.framework in Frameworks */,
 				A79FAABB1AAB081C00A9946A /* UIKit.framework in Frameworks */,
 				A79FAA491AAACE8400A9946A /* libsqlite3.dylib in Frameworks */,
+				A7AB19C11AAC6504009B411C /* MapKit.framework in Frameworks */,
 				A79FAA471AAACE7A00A9946A /* libz.dylib in Frameworks */,
 				A79FAA451AAACE7100A9946A /* SystemConfiguration.framework in Frameworks */,
 				A79FAA431AAACE6600A9946A /* StoreKit.framework in Frameworks */,
@@ -438,6 +441,7 @@
 		A79FA9A91AAAC5FC00A9946A = {
 			isa = PBXGroup;
 			children = (
+				A7AB19C01AAC6504009B411C /* MapKit.framework */,
 				371D51731AAB74AE00115740 /* Settings.bundle */,
 				A79FAABC1AAB082A00A9946A /* Foundation.framework */,
 				A79FAABA1AAB081C00A9946A /* UIKit.framework */,
@@ -825,6 +829,9 @@
 						DevelopmentTeam = QCHSMSH3C7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
