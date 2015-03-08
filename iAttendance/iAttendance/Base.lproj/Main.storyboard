@@ -911,17 +911,9 @@ Last Edited on 2014-10-13</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-sZ-lb6">
-                                <rect key="frame" x="278" y="132" width="44" height="30"/>
-                                <state key="normal" title="Admin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Lrh-Tw-aUH" kind="presentation" modalTransitionStyle="flipHorizontal" id="cOY-tq-9v8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chg-Pe-8WF">
-                                <rect key="frame" x="269" y="170" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chg-Pe-8WF">
+                                <rect key="frame" x="169" y="276" width="248" height="108"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="Attendee">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -929,14 +921,31 @@ Last Edited on 2014-10-13</string>
                                     <segue destination="bMh-Ox-dK6" kind="presentation" modalTransitionStyle="flipHorizontal" id="MEc-Hh-PEe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-sZ-lb6">
+                                <rect key="frame" x="169" y="160" width="248" height="108"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <state key="normal" title="Admin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Lrh-Tw-aUH" kind="presentation" modalTransitionStyle="flipHorizontal" id="cOY-tq-9v8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" id="0nG-R6-gDn"/>
+                            <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" constant="7" id="0nG-R6-gDn"/>
                             <constraint firstAttribute="centerX" secondItem="chg-Pe-8WF" secondAttribute="centerX" id="1ET-sc-kFz"/>
-                            <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="chg-Pe-8WF" secondAttribute="bottom" constant="400" id="O82-Qw-HdQ"/>
-                            <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" symbolic="YES" id="neP-Lx-rg6"/>
+                            <constraint firstAttribute="centerY" secondItem="chg-Pe-8WF" secondAttribute="centerY" id="98r-8S-lHj"/>
+                            <constraint firstAttribute="centerY" secondItem="FwZ-sZ-lb6" secondAttribute="centerY" id="CCY-Ds-Xfg"/>
+                            <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="chg-Pe-8WF" secondAttribute="bottom" constant="216" id="O82-Qw-HdQ"/>
+                            <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" id="neP-Lx-rg6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="O82-Qw-HdQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="LKT-Ys-K1A">
                         <barButtonItem key="leftBarButtonItem" image="menu_black.png" id="ZQx-0t-K2r">

@@ -228,7 +228,7 @@ bool touchIDAlertVisible;
                                     
                                     // Increment the current value of the attendance key by 1
                                     [eventCheckin incrementKey:@"attendance"];
-                                    
+                                    [eventCheckin addObject:[[PFUser currentUser] username] forKey:@"attendees"];
                                     // Save
                                     [eventCheckin save];
                                     
