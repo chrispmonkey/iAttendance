@@ -86,6 +86,7 @@ NSDate *minutesSinceStart;
     self.broadcastButton.titleLabel.font = [UIFont boldFlatFontOfSize:30];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    [self startEvent];
     
 }
 
