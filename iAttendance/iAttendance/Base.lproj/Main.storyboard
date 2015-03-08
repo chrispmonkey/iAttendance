@@ -955,6 +955,17 @@ Last Edited on 2014-10-13</string>
                                     <segue destination="Lrh-Tw-aUH" kind="presentation" modalTransitionStyle="flipHorizontal" id="cOY-tq-9v8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-qP-8yT">
+                                <rect key="frame" x="74" y="448" width="453" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="pnz-X0-uXx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                <state key="normal" title="Send Question">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -963,6 +974,7 @@ Last Edited on 2014-10-13</string>
                             <constraint firstAttribute="centerY" secondItem="FwZ-sZ-lb6" secondAttribute="centerY" id="1Sh-57-hjF"/>
                             <constraint firstAttribute="centerY" secondItem="chg-Pe-8WF" secondAttribute="centerY" id="4O0-bK-qJK"/>
                             <constraint firstItem="gUx-Ev-vID" firstAttribute="bottom" secondItem="TWO-0p-aYH" secondAttribute="top" id="7Bx-43-2rG"/>
+                            <constraint firstAttribute="bottom" secondItem="dlP-qP-8yT" secondAttribute="bottom" constant="20" symbolic="YES" id="9rA-je-QPS"/>
                             <constraint firstItem="FwZ-sZ-lb6" firstAttribute="top" secondItem="vEi-Rg-7wz" secondAttribute="bottom" constant="96" id="Aa9-HL-OEm"/>
                             <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" symbolic="YES" id="Eyw-Jb-jYx"/>
                             <constraint firstItem="FwZ-sZ-lb6" firstAttribute="trailing" secondItem="chg-Pe-8WF" secondAttribute="trailing" id="NbV-4n-uYk"/>
@@ -971,9 +983,11 @@ Last Edited on 2014-10-13</string>
                             <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" id="Q2R-uA-5H7"/>
                             <constraint firstItem="FwZ-sZ-lb6" firstAttribute="leading" secondItem="Nqi-tZ-B2r" secondAttribute="leading" constant="169" id="RC7-03-ehI"/>
                             <constraint firstItem="FwZ-sZ-lb6" firstAttribute="leading" secondItem="chg-Pe-8WF" secondAttribute="leading" id="UK3-IE-esi"/>
+                            <constraint firstItem="dlP-qP-8yT" firstAttribute="leading" secondItem="Nqi-tZ-B2r" secondAttribute="leadingMargin" constant="58" id="cZR-JC-ajA"/>
                             <constraint firstAttribute="centerY" secondItem="chg-Pe-8WF" secondAttribute="centerY" id="chr-mB-wvq"/>
                             <constraint firstItem="gUx-Ev-vID" firstAttribute="leading" secondItem="Nqi-tZ-B2r" secondAttribute="leading" id="e4T-cv-43H"/>
                             <constraint firstAttribute="centerX" secondItem="gUx-Ev-vID" secondAttribute="centerX" id="fTv-7L-Ija"/>
+                            <constraint firstAttribute="centerX" secondItem="dlP-qP-8yT" secondAttribute="centerX" id="hGb-ct-l10"/>
                             <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" id="iZW-PE-WeI"/>
                             <constraint firstAttribute="centerX" secondItem="chg-Pe-8WF" secondAttribute="centerX" id="kNw-DP-VOh"/>
                             <constraint firstAttribute="centerY" secondItem="FwZ-sZ-lb6" secondAttribute="centerY" id="p3r-bM-8xq"/>
@@ -999,6 +1013,7 @@ Last Edited on 2014-10-13</string>
                     <connections>
                         <outlet property="adminButton" destination="FwZ-sZ-lb6" id="xsp-Ta-rMw"/>
                         <outlet property="attendeeButton" destination="chg-Pe-8WF" id="6VY-Je-cF3"/>
+                        <outlet property="questionButton" destination="dlP-qP-8yT" id="tSl-pG-95E"/>
                         <outlet property="slideButton" destination="4yy-zf-aLo" id="Amy-0y-jsq"/>
                     </connections>
                 </viewController>

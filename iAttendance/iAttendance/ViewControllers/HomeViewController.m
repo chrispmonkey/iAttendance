@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) METransitions *transitions;
 @property (nonatomic, strong) UIPanGestureRecognizer *dynamicTransitionPanGesture;
+@property (weak, nonatomic) IBOutlet UIButton *questionButton;
 
 @end
 
@@ -46,6 +47,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.adminButton.hidden = YES;
     self.attendeeButton.hidden = YES;
+    self.questionButton.hidden = YES;
     [super viewWillAppear:animated];
     
     // Makes the menu appear smoothly by adding the appropriate gesture recognizers
@@ -82,9 +84,11 @@
                 if ([[object objectForKey:@"type"] isEqualToString:@"admin"]) {
                     self.attendeeButton.hidden = YES;
                     self.adminButton.hidden = NO;
+                    self.questionButton.hidden = NO;
                 }else if ([[object objectForKey:@"type"] isEqualToString:@"attendee"])
                 {
                     self.adminButton.hidden = YES;
+                    self.questionButton.hidden = YES;
                     self.attendeeButton.hidden = NO;
                 }
             }
