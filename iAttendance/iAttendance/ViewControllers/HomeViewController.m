@@ -77,7 +77,7 @@
                 //[object objectForKey:@"firstName"];
                 if ([[object objectForKey:@"type"] isEqualToString:@"admin"]) {
                     self.attendeeButton.hidden = YES;
-                    self.adminButton.hidden = YES;
+                    self.adminButton.hidden = NO;
                 }else if ([[object objectForKey:@"type"] isEqualToString:@"attendee"])
                 {
                     self.adminButton.hidden = YES;
