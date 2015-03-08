@@ -14,6 +14,7 @@
 #import <Parse/Parse.h>
 
 @interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *slideButton;
 
 @property (nonatomic, strong) METransitions *transitions;
 @property (nonatomic, strong) UIPanGestureRecognizer *dynamicTransitionPanGesture;
@@ -27,16 +28,19 @@
     // Do any additional setup after loading the view.
     
     [self.segmentedControl addTarget:self action:@selector(handleToggle:) forControlEvents:UIControlEventValueChanged];
-    
+    self.view.backgroundColor = [UIColor clearColor];
     self.transitions.dynamicTransition.slidingViewController = self.slidingViewController;
     CLLocationManager *locationManager;
     
-  
-    
+    [self setNeedsStatusBarAppearanceUpdate];
+   
     
     locationManager = [[CLLocationManager alloc] init];
     
     [locationManager requestWhenInUseAuthorization];
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -97,6 +101,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self resignFirstResponder];
     [super viewWillDisappear:animated];
+    
 }
 
 
