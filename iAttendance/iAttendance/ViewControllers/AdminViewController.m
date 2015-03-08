@@ -87,9 +87,6 @@ NSDate *minutesSinceStart;
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.broadcastButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     
-    [self startEvent];
-
-
 }
 
 
@@ -194,8 +191,10 @@ NSDate *minutesSinceStart;
 }
 
 - (IBAction)stopButtonPressed:(id)sender {
-    
-    //self.peripheralManager.state =
+    [self.attendanceRefreshTimer invalidate];
+    [self.peripheralManager stopAdvertising];
+    //self.peripheralManager.state = CBPeripheralManagerStatePoweredOff;
+    self.statusLabel.text = @"Stopped";
    // [self peripheralManagerDidUpdateState:self.peripheralManager];
     
 }
