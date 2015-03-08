@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQ2-2y-H0K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQ2-2y-H0K">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -911,18 +911,32 @@ Last Edited on 2014-10-13</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chg-Pe-8WF">
-                                <rect key="frame" x="169" y="276" width="248" height="108"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chg-Pe-8WF">
+                                <rect key="frame" x="176" y="276" width="248" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="lty-iL-zuX"/>
+                                    <constraint firstAttribute="height" constant="108" id="tf1-zA-Y1q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="Attendee">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lty-iL-zuX"/>
+                                        <exclude reference="tf1-zA-Y1q"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="bMh-Ox-dK6" kind="presentation" modalTransitionStyle="flipHorizontal" id="MEc-Hh-PEe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-sZ-lb6">
-                                <rect key="frame" x="169" y="160" width="248" height="108"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwZ-sZ-lb6">
+                                <rect key="frame" x="176" y="160" width="248" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="bTS-gg-6bC"/>
+                                    <constraint firstAttribute="height" constant="108" id="cGP-VP-CWn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="Admin">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -934,16 +948,33 @@ Last Edited on 2014-10-13</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" constant="7" id="0nG-R6-gDn"/>
-                            <constraint firstAttribute="centerX" secondItem="chg-Pe-8WF" secondAttribute="centerX" id="1ET-sc-kFz"/>
-                            <constraint firstAttribute="centerY" secondItem="chg-Pe-8WF" secondAttribute="centerY" id="98r-8S-lHj"/>
-                            <constraint firstAttribute="centerY" secondItem="FwZ-sZ-lb6" secondAttribute="centerY" id="CCY-Ds-Xfg"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="trailing" secondItem="chg-Pe-8WF" secondAttribute="trailing" id="AAd-F5-4tc"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="top" secondItem="vEi-Rg-7wz" secondAttribute="bottom" constant="96" id="Aa9-HL-OEm"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="top" secondItem="vEi-Rg-7wz" secondAttribute="bottom" constant="96" id="Eua-v8-Agh"/>
+                            <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" symbolic="YES" id="Eyw-Jb-jYx"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="trailing" secondItem="chg-Pe-8WF" secondAttribute="trailing" id="NbV-4n-uYk"/>
                             <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="chg-Pe-8WF" secondAttribute="bottom" constant="216" id="O82-Qw-HdQ"/>
-                            <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" id="neP-Lx-rg6"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="leading" secondItem="Nqi-tZ-B2r" secondAttribute="leading" constant="169" id="RC7-03-ehI"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="leading" secondItem="chg-Pe-8WF" secondAttribute="leading" id="UK3-IE-esi"/>
+                            <constraint firstItem="FwZ-sZ-lb6" firstAttribute="leading" secondItem="chg-Pe-8WF" secondAttribute="leading" id="a4H-p4-39Q"/>
+                            <constraint firstAttribute="centerY" secondItem="chg-Pe-8WF" secondAttribute="centerY" id="chr-mB-wvq"/>
+                            <constraint firstItem="chg-Pe-8WF" firstAttribute="top" secondItem="FwZ-sZ-lb6" secondAttribute="bottom" constant="8" symbolic="YES" id="eow-yQ-m2O"/>
+                            <constraint firstAttribute="centerX" secondItem="FwZ-sZ-lb6" secondAttribute="centerX" id="iZW-PE-WeI"/>
+                            <constraint firstAttribute="centerX" secondItem="chg-Pe-8WF" secondAttribute="centerX" id="kNw-DP-VOh"/>
+                            <constraint firstAttribute="centerY" secondItem="FwZ-sZ-lb6" secondAttribute="centerY" id="p3r-bM-8xq"/>
+                            <constraint firstItem="TWO-0p-aYH" firstAttribute="top" secondItem="chg-Pe-8WF" secondAttribute="bottom" constant="216" id="u8J-GQ-Iiw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Aa9-HL-OEm"/>
+                                <exclude reference="NbV-4n-uYk"/>
+                                <exclude reference="RC7-03-ehI"/>
+                                <exclude reference="UK3-IE-esi"/>
+                                <exclude reference="iZW-PE-WeI"/>
+                                <exclude reference="p3r-bM-8xq"/>
+                                <exclude reference="Eyw-Jb-jYx"/>
                                 <exclude reference="O82-Qw-HdQ"/>
+                                <exclude reference="u8J-GQ-Iiw"/>
                             </mask>
                         </variation>
                     </view>
